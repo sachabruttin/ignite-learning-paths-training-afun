@@ -218,7 +218,7 @@
             "type": "Microsoft.Logic/workflows",
             "apiVersion": "2017-07-01",
             "name": "[variables('workflowName')]",
-            "location": "eastus",
+            "location": "[resourceGroup().location]",
             "tags": {
                 "ExpireOn": "[parameters('ExpireOn')]",
                 "Owner": "[parameters('OwnerName')]"
@@ -288,7 +288,7 @@
             "type": "Microsoft.Logic/workflows",
             "apiVersion": "2017-07-01",
             "name": "[variables('workflowFinalName')]",
-            "location": "eastus",
+            "location": "[resourceGroup().location]",
             "dependsOn":[
                 "[resourceId('Microsoft.Web/sites',variables('funcAppFinalName'))]",
                 "[resourceId('Microsoft.Web/Sites/sourcecontrols', variables('funcAppFinalName'), 'web')]"
